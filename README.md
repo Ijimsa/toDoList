@@ -1,3 +1,7 @@
+DB_URL = main-database.casfysrjkdko.us-east-1.rds.amazonaws.com:3306;
+user= admin;
+password = 12345678;
+
 # toDoList
 Proyect in symfony and react
 PROYECTO REACT + SYMFONY
