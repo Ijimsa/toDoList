@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello HomeController!{% endblock %}
+
+{% block body %}
+<style>
+   
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+</style>
+
+<div class="example-wrapper">
+<div class="nav">
+
+  
+
+     {% if app.user %}
+        <h5>Hola {{ app.user.email }} su ID es  {{ app.user.id}} </h5>
+           <li> <code><a href="{{path('app_logout')}}"> Logout</a></code></li>
+     {% else %}
+    
+ <ul>
+    <p> Usuario no registrado</p>
+        <li> <code><a href="{{ path('app_register') }}"> Registro</a></code></li>
+       <li><code><a href="{{ path('app_login') }}"> Login</a></code></li>
+    </ul>
+
+    {% endif %}
+   
+       </div>
+
+</div>
+{% endblock %}
