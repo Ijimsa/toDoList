@@ -27,6 +27,9 @@ class Task
     #[ORM\Column(type: Types::DATETIME_MUTABLE)]
     private ?\DateTimeInterface $date = null;
 
+    #[ORM\Column]
+    private ?int $importance = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -81,5 +84,17 @@ class Task
     }
     public function __toString(){
         return $this->text;
+    }
+
+    public function getImportance(): ?int
+    {
+        return $this->importance;
+    }
+
+    public function setImportance(int $importance): self
+    {
+        $this->importance = $importance;
+
+        return $this;
     }
 }
